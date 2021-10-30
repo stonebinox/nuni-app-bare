@@ -6,13 +6,14 @@ import {SplashScreen} from './components/splash-screen/splash-screen';
 import {Login} from './components/login/login';
 import {OTPScreen} from './components/otp-screen/otp-screen';
 import {HomeScreen} from './components/home-screen/home';
+import {Search} from './components/search-screen/search';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator initialRouteName="Splash">
+      <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen
           name="Splash"
           component={SplashScreen}
@@ -41,7 +42,14 @@ export default function App() {
             headerShown: false,
           }}
         />
-        </Stack.Navigator> */}
+        <Stack.Screen
+          name="Search"
+          component={Search}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
