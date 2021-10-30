@@ -38,7 +38,7 @@ const RightBall = styled(Ball)`
   right: -200px;
 `;
 
-export const SplashScreen = ({navigation}) => {
+export const Splash = ({navigation}) => {
   const navigateLogin = async () => {
     const userToken = await AsyncStorage.getItem('userToken');
 

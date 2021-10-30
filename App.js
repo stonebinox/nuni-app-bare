@@ -2,9 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {SplashScreen} from './components/splash-screen/splash-screen';
-import {Login} from './components/login/login';
-import {OTPScreen} from './components/otp-screen/otp-screen';
+import {Splash} from './components/splash-screen/splash';
+import {Login} from './components/login-screen/login';
+import {OTP} from './components/otp-screen/otp';
 import {HomeScreen} from './components/home-screen/home';
 import {Search} from './components/search-screen/search';
 
@@ -16,7 +16,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen
           name="Splash"
-          component={SplashScreen}
+          component={Splash}
           options={{
             headerShown: false,
           }}
@@ -30,7 +30,7 @@ export default function App() {
         />
         <Stack.Screen
           name="OTP"
-          component={OTPScreen}
+          component={OTP}
           options={{
             headerShown: false,
           }}

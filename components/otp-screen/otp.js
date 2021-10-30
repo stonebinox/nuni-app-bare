@@ -30,7 +30,7 @@ const BottomRightBall = styled(Ball)`
   right: -200px;
 `;
 
-export const OTPScreen = ({navigation, route}) => {
+export const OTP = ({navigation, route}) => {
   const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);
   const {
