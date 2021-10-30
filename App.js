@@ -1,12 +1,12 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import {Splash} from './components/splash-screen/splash';
-import {Login} from './components/login-screen/login';
-import {OTP} from './components/otp-screen/otp';
-import {HomeScreen} from './components/home-screen/home';
-import {Search} from './components/search-screen/search';
+import { Splash } from './components/splash-screen/splash';
+import { Login } from './components/login-screen/login';
+import { OTP } from './components/otp-screen/otp';
+import { HomeScreen } from './components/home-screen/home';
+import { Search } from './components/search-screen/search';
 
 const Stack = createNativeStackNavigator();
 
