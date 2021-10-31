@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { RNCamera } from 'react-native-camera';
-import QRCodeScanner from 'react-native-qrcode-scanner';
+import React from 'react';
+import { Alert } from 'react-native';
+import styled from 'styled-components';
 
 import {
   ButtonText,
@@ -8,41 +8,40 @@ import {
   Heading,
   PrimaryButton,
   ScrollContainer,
-  SecondaryButton,
-  SecondaryButtonText,
   SmallHeading,
+  BASE_SPACING,
 } from '../common.styles';
 
-export const Scan = () => {
-  const [loadScanner, setLoadScanner] = useState(false);
+const ScanSubtitle = styled(SmallHeading)`
+  margin-bottom: ${BASE_SPACING}px;
+`;
 
-  const scannerRead = e => {
-    setLoadScanner(false);
-    const { data } = e;
-
-    console.log('data', data);
+export const Scan = ({ navigation }) => {
+  const getNuniInfo = data => {
+    if (data.indexOf('nuni-') === 0) {
+      const nuniId = data.replace('nuni-', '');
+      console.log('nuni', nuniId);
+    } else {
+      Alert.alert(
+        'Invalid QR',
+        'This QR is not a valid Nuni QR. Please verify and try again.',
+      );
+    }
   };
 
   return (
     <Container edges={['top']}>
       <ScrollContainer>
         <Heading>Scan</Heading>
-        <SmallHeading>Scan the QR code on the Nuni to get started</SmallHeading>
-        <PrimaryButton onPress={() => setLoadScanner(true)}>
+        <ScanSubtitle>Scan the QR code on the Nuni to get started</ScanSubtitle>
+        <PrimaryButton
+          onPress={() =>
+            navigation.navigate('QRScanner', {
+              getNuniInfo,
+            })
+          }>
           <ButtonText>Scan Nuni</ButtonText>
         </PrimaryButton>
-        {loadScanner && (
-          <QRCodeScanner
-            onRead={scannerRead}
-            flashMode={RNCamera.Constants.FlashMode.auto}
-            showMarker
-            bottomContent={
-              <SecondaryButton onPress={() => setLoadScanner(false)}>
-                <SecondaryButtonText>Cancel</SecondaryButtonText>
-              </SecondaryButton>
-            }
-          />
-        )}
       </ScrollContainer>
     </Container>
   );
