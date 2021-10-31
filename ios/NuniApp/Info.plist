@@ -70,5 +70,7 @@
 	<string>Zocial.ttf</string>
 	<string>Fontisto.ttf</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>We'll need access to your camera to scan a Nuni QR code.</string>
 </dict>
 </plist>
