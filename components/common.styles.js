@@ -31,16 +31,16 @@ export const Heading = styled.Text`
   color: ${colors.grey6};
   text-align: center;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: -1px;
   margin-bottom: ${BASE_SPACING}px;
   margin-top: ${DOUBLE_SPACING}px;
 `;
 
 export const SmallHeading = styled.Text`
-  font-size: 15px;
+  font-size: 20px;
   color: ${colors.grey6};
   text-align: center;
-  font-weight: bold;
+  letter-spacing: -0.5px;
 `;
 
 export const Input = styled.TextInput`
@@ -77,10 +77,12 @@ export const ButtonText = styled.Text`
   text-align: center;
   font-weight: bold;
   margin-top: ${QUARTER_SPACING / 2}px;
+  letter-spacing: -0.5px;
 `;
 
 export const SecondaryButtonText = styled(ButtonText)`
   color: ${colors.aqua};
+  font-weight: normal;
 `;
 
 export const Ball = styled.View`
