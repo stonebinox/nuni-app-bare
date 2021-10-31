@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import {Alert} from 'react-native';
+import { Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
@@ -16,7 +16,7 @@ import {
   BASE_SPACING,
 } from '../common.styles';
 import Symbol from '../../assets/wave.png';
-import {validateOtp} from '../../helpers/api';
+import { validateOtp } from '../../helpers/api';
 
 const LogoSymbol = styled.Image`
   width: 30%;
@@ -30,11 +30,11 @@ const BottomRightBall = styled(Ball)`
   right: -200px;
 `;
 
-export const OTP = ({navigation, route}) => {
+export const OTP = ({ navigation, route }) => {
   const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);
   const {
-    params: {phoneNumber = ''},
+    params: { phoneNumber = '' },
   } = route;
 
   const otpCheck = () => {
@@ -55,14 +55,14 @@ export const OTP = ({navigation, route}) => {
 
         if (response.ok) {
           const {
-            data: {user_id: userId, user_token: userToken},
+            data: { user_id: userId, user_token: userToken },
           } = response;
           await AsyncStorage.setItem('userId', userId);
           await AsyncStorage.setItem('userToken', userToken);
 
-          navigation.navigate('Search');
+          navigation.navigate('Home');
         } else {
-          const {msg} = response;
+          const { msg } = response;
           Alert.alert('Error', msg);
         }
       })

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const BASE_SPACING = 16;
 export const HALF_SPACING = BASE_SPACING / 2;
@@ -32,7 +32,8 @@ export const Heading = styled.Text`
   text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
-  margin-bottom: ${DOUBLE_SPACING + BASE_SPACING * 1.5}px;
+  margin-bottom: ${BASE_SPACING}px;
+  margin-top: ${DOUBLE_SPACING}px;
 `;
 
 export const SmallHeading = styled.Text`

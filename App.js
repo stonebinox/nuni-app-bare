@@ -6,7 +6,7 @@ import { Splash } from './components/splash-screen/splash';
 import { Login } from './components/login-screen/login';
 import { OTP } from './components/otp-screen/otp';
 import { HomeScreen } from './components/home-screen/home';
-import { Search } from './components/search-screen/search';
+import { Scan } from './components/scan-screen/scan';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,8 +43,8 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="Search"
-          component={Search}
+          name="Scan"
+          component={Scan}
           options={{
             headerShown: false,
           }}

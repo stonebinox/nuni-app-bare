@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
 
 import {
@@ -10,12 +10,13 @@ import {
   PrimaryButton,
   Ball,
   BASE_SPACING,
+  DOUBLE_SPACING,
 } from '../common.styles';
-import {authenticate} from '../../helpers/api';
+import { authenticate } from '../../helpers/api';
 
 import Symbol from '../../assets/wave.png';
-import {Alert} from 'react-native';
-import {Loader} from '../common/loader';
+import { Alert } from 'react-native';
+import { Loader } from '../common/loader';
 
 const LogoSymbol = styled.Image`
   width: 30%;
@@ -29,7 +30,12 @@ const BottomRightBall = styled(Ball)`
   right: -200px;
 `;
 
-export const Login = ({navigation}) => {
+const LoginHeading = styled(Heading)`
+  margin-bottom: ${DOUBLE_SPACING + BASE_SPACING * 1.5}px;
+  margin-top: 0;
+`;
+
+export const Login = ({ navigation }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -57,7 +63,7 @@ export const Login = ({navigation}) => {
             phoneNumber,
           });
         } else {
-          const {msg} = data;
+          const { msg } = data;
           Alert.alert('Error', msg);
         }
       })
@@ -71,7 +77,7 @@ export const Login = ({navigation}) => {
     <Container edges={['top']}>
       <ScrollContainer>
         <LogoSymbol source={Symbol} resizeMode="contain" />
-        <Heading>LOGIN</Heading>
+        <LoginHeading>LOGIN</LoginHeading>
         <Input
           placeholder="Phone number"
           keyboardType="number-pad"
