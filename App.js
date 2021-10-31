@@ -8,6 +8,7 @@ import { OTP } from './components/otp-screen/otp';
 import { HomeScreen } from './components/home-screen/home';
 import { Scan } from './components/scan-screen/scan';
 import { QRScannerModal } from './components/qr-scanner-modal/qr-scanner';
+import { Nuni } from './components/nuni/nuni';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +60,11 @@ export default function App() {
             options={{
               title: 'Scan Nuni QR',
             }}
+          />
+          <Stack.Screen
+            name="Nuni"
+            component={Nuni}
+            options={{ title: 'Nuni Details' }}
           />
         </Stack.Group>
       </Stack.Navigator>

@@ -26,3 +26,15 @@ export const getNunis = async () => {
     },
   });
 };
+
+export const getNuniClient = async body => {
+  const token = await AsyncStorage.getItem('userToken');
+
+  return fetch(`${API_URL}/get-nuni-client`, {
+    method: 'POST',
+    headers: {
+      token,
+    },
+    body,
+  });
+};

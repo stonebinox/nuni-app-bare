@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Alert} from 'react-native';
+import React, { useState } from 'react';
+import { Alert } from 'react-native';
 import styled from 'styled-components/native';
 
 import {
@@ -7,24 +7,24 @@ import {
   colors,
   PrimaryButton,
   ButtonText,
-  SmallHeading,
+  Heading,
+  Container,
 } from '../common.styles';
 
 const NuniContainer = styled.View`
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding-bottom: ${BASE_SPACING}px;
-  border-bottom-width: 3px;
-  border-bottom-color: ${colors.lightestGrey};
-  border-radius: 4px;
 `;
 
-export const Nuni = ({nuni}) => {
+export const Nuni = ({ navigation, route }) => {
+  const {
+    params: { nuni },
+  } = route;
   const [active, setActive] = useState(false);
   const [buttonActive, setButtonActive] = useState(false);
   const {
-    nuni: {activation_url, deactivation_url},
-    client: {name, address},
+    nuni: { activation_url, deactivation_url },
+    client: { name, address },
   } = nuni;
 
   const handleNuni = () => {
@@ -53,13 +53,17 @@ export const Nuni = ({nuni}) => {
   };
 
   return (
-    <NuniContainer>
-      <SmallHeading>
-        At {name}, {address}
-      </SmallHeading>
-      <PrimaryButton onPress={handleNuni}>
-        <ButtonText>{active ? 'Deactivate' : 'Activate'}</ButtonText>
-      </PrimaryButton>
-    </NuniContainer>
+    <Container edges={['top']}>
+      <NuniContainer>
+        <Heading>
+          {name}, {address}
+        </Heading>
+        <PrimaryButton onPress={handleNuni}>
+          <ButtonText>
+            {active ? 'Deactivate Nuni' : 'Activate Nuni'}
+          </ButtonText>
+        </PrimaryButton>
+      </NuniContainer>
+    </Container>
   );
 };
