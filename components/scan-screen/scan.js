@@ -58,7 +58,7 @@ export const Scan = ({ navigation }) => {
   return (
     <Container edges={['top']}>
       <ScrollContainer>
-        <Heading>Scan</Heading>
+        <Heading>SCAN</Heading>
         <ScanSubtitle>Scan the QR code on the Nuni to get started</ScanSubtitle>
         {loading ? (
           <Loader />
@@ -69,7 +69,7 @@ export const Scan = ({ navigation }) => {
                 getNuniInfo,
               })
             }>
-            <ButtonText>Scan Nuni</ButtonText>
+            <ButtonText>scan nuni</ButtonText>
           </PrimaryButton>
         )}
       </ScrollContainer>

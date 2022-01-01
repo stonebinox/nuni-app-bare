@@ -23,7 +23,7 @@ export const QRScannerModal = ({ navigation, route }) => {
       showMarker
       bottomContent={
         <SecondaryButton onPress={() => navigation.goBack()}>
-          <SecondaryButtonText>Cancel</SecondaryButtonText>
+          <SecondaryButtonText>cancel</SecondaryButtonText>
         </SecondaryButton>
       }
     />

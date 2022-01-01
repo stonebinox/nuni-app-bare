@@ -27,20 +27,21 @@ export const ScrollContainer = styled.ScrollView`
 `;
 
 export const Heading = styled.Text`
-  font-size: 28px;
-  color: ${colors.grey6};
+  font-size: 32px;
+  color: ${colors.grey3};
   text-align: center;
-  font-weight: bold;
   letter-spacing: -1px;
   margin-bottom: ${BASE_SPACING}px;
   margin-top: ${DOUBLE_SPACING}px;
+  font-family: 'Lato-Black';
 `;
 
 export const SmallHeading = styled.Text`
   font-size: 20px;
   color: ${colors.grey6};
   text-align: center;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
+  font-family: Lato-Regular;
 `;
 
 export const Input = styled.TextInput`
@@ -53,6 +54,7 @@ export const Input = styled.TextInput`
   height: 50px;
   margin: 0 auto;
   margin-bottom: ${BASE_SPACING}px;
+  font-family: Lato-Regular;
 `;
 
 export const PrimaryButton = styled.TouchableOpacity`
@@ -77,7 +79,8 @@ export const ButtonText = styled.Text`
   text-align: center;
   font-weight: bold;
   margin-top: ${QUARTER_SPACING / 2}px;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
+  font-family: Lato-Bold;
 `;
 
 export const SecondaryButtonText = styled(ButtonText)`

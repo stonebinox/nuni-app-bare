@@ -31,6 +31,9 @@ export const HomeScreen = ({ navigation }) => (
       tabBarInactiveTintColor: colors.grey3,
       headerShown: false,
       tabBarHideOnKeyboard: true,
+      tabBarLabelStyle: {
+        fontFamily: 'Lato-Bold',
+      },
     })}>
     <Tab.Screen name="Search" component={Scan} />
     <Tab.Screen name="Scan" component={Scan} />
